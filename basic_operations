@@ -1,0 +1,103 @@
+Basic Redis commands and operations:
+
+**Key-Value Operations:**
+1. **SET key value:** Set the value of a key.
+   ```
+   SET mykey "Hello Redis"
+   ```
+
+2. **GET key:** Get the value of a key.
+   ```
+   GET mykey
+   ```
+
+3. **DEL key:** Delete a key and its associated value.
+   ```
+   DEL mykey
+   ```
+
+**String Operations:**
+4. **APPEND key value:** Append a value to an existing key.
+   ```
+   APPEND mykey " World"
+   ```
+
+5. **STRLEN key:** Get the length of the string value stored at a key.
+   ```
+   STRLEN mykey
+   ```
+
+**List Operations:**
+6. **LPUSH key value [value ...]:** Prepend one or multiple values to a list.
+   ```
+   LPUSH mylist "item1" "item2"
+   ```
+
+7. **RPUSH key value [value ...]:** Append one or multiple values to a list.
+   ```
+   RPUSH mylist "item3" "item4"
+   ```
+
+8. **LLEN key:** Get the length of a list.
+   ```
+   LLEN mylist
+   ```
+
+9. **LRANGE key start stop:** Get a range of elements from a list.
+   ```
+   LRANGE mylist 0 -1
+   ```
+
+**Set Operations:**
+10. **SADD key member [member ...]:** Add one or more members to a set.
+    ```
+    SADD myset "member1" "member2"
+    ```
+
+11. **SMEMBERS key:** Get all members of a set.
+    ```
+    SMEMBERS myset
+    ```
+
+12. **SISMEMBER key member:** Check if a member exists in a set.
+    ```
+    SISMEMBER myset "member1"
+    ```
+
+**Hash Operations:**
+13. **HSET key field value:** Set the hash field to a value.
+    ```
+    HSET myhash field1 "value1"
+    ```
+
+14. **HGET key field:** Get the value of a hash field.
+    ```
+    HGET myhash field1
+    ```
+
+15. **HGETALL key:** Get all fields and values in a hash.
+    ```
+    HGETALL myhash
+    ```
+
+**Pub/Sub Messaging:**
+16. **SUBSCRIBE channel:** Subscribe to a message channel.
+    ```
+    SUBSCRIBE mychannel
+    ```
+
+17. **PUBLISH channel message:** Publish a message to a channel.
+    ```
+    PUBLISH mychannel "Hello, World!"
+    ```
+
+**Expiry and TTL:**
+18. **EXPIRE key seconds:** Set a key's time to live in seconds.
+    ```
+    EXPIRE mykey 60
+    ```
+
+19. **TTL key:** Get the remaining time to live for a key.
+    ```
+    TTL mykey
+    ```
